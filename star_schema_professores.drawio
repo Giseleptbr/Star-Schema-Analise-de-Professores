@@ -1,0 +1,53 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="star-schema" name="Star Schema Professores">
+    <mxGraphModel dx="1420" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Fato -->
+        <mxCell id="Fato" value="Fato_ProfessorCurso&#xa;- PK_Fato&#xa;- SK_Professor&#xa;- SK_Curso&#xa;- SK_Departamento&#xa;- SK_Disciplina&#xa;- SK_Tempo&#xa;&#xa;Medidas:&#xa;- CargaHoraria_Ministrada&#xa;- Qtde_Disciplinas&#xa;- Qtde_Cursos" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="250" width="220" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- Dimensões -->
+        <mxCell id="Professor" value="Dim_Professor&#xa;- SK_Professor (PK)&#xa;- ID_Professor&#xa;- Nome&#xa;- Titulação&#xa;- Regime_Contratacao&#xa;- Tempo_Carreira" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="200" height="140" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Curso" value="Dim_Curso&#xa;- SK_Curso (PK)&#xa;- ID_Curso&#xa;- Nome_Curso&#xa;- Tipo_Curso&#xa;- Modalidade&#xa;- Carga_Horaria_Total" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="400" y="50" width="200" height="140" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Disciplina" value="Dim_Disciplina&#xa;- SK_Disciplina (PK)&#xa;- ID_Disciplina&#xa;- Nome_Disciplina&#xa;- Área_Conhecimento&#xa;- Créditos&#xa;- Carga_Horaria" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="750" y="50" width="200" height="140" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Departamento" value="Dim_Departamento&#xa;- SK_Departamento (PK)&#xa;- ID_Departamento&#xa;- Nome_Departamento&#xa;- Centro" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="50" y="500" width="200" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Tempo" value="Dim_Tempo&#xa;- SK_Tempo (PK)&#xa;- Data_Completa&#xa;- Ano&#xa;- Semestre&#xa;- Trimestre&#xa;- Mês&#xa;- Nome_Mês&#xa;- Dia_Semana" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="750" y="500" width="200" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexões -->
+        <mxCell id="edge1" edge="1" parent="1" source="Professor" target="Fato">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="Curso" target="Fato">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="Disciplina" target="Fato">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="Departamento" target="Fato">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="Tempo" target="Fato">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
